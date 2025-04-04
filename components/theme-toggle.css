@@ -1,0 +1,92 @@
+/* RSSHub风格的主题切换按钮 */
+.VPSwitch {
+  position: relative;
+  border: 0;
+  width: 40px;
+  height: 22px;
+  padding: 0;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 11px;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.VPSwitch:hover {
+  background-color: var(--vp-c-bg-soft-mute);
+}
+
+.check {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--vp-c-gray-soft);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+:root[class~="dark"] .check {
+  background-color: var(--vp-c-brand);
+  transform: translateX(18px);
+}
+
+.icon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.sun-icon,
+.moon-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vp-c-text);
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.sun-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.moon-icon {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+:root[class~="dark"] .sun-icon {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+:root[class~="dark"] .moon-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 自定义颜色变量 */
+:root {
+  --vp-c-bg-soft: rgba(0, 0, 0, 0.1);
+  --vp-c-bg-soft-mute: rgba(0, 0, 0, 0.15);
+  --vp-c-gray-soft: #f9f9f9;
+  --vp-c-brand: #3eaf7c;
+  --vp-c-text: #213547;
+}
+
+:root[class~="dark"] {
+  --vp-c-bg-soft: rgba(255, 255, 255, 0.1);
+  --vp-c-bg-soft-mute: rgba(255, 255, 255, 0.15);
+  --vp-c-gray-soft: #313136;
+  --vp-c-text: #ffffff;
+}

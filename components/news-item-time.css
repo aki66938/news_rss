@@ -1,0 +1,48 @@
+/* 新闻项时间样式 */
+.news-item-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  min-width: 20px;
+  max-height: 100%;
+  overflow: hidden;
+  background-color: var(--accent);
+  border-radius: 4px;
+  padding: 4px 2px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+  color: var(--muted-foreground);
+}
+
+/* 数字部分样式 - 横向显示 */
+.time-number {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+/* 单位部分样式 - 竖向显示 */
+.time-unit {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 0.7rem;
+  line-height: 1;
+  display: block;
+  text-align: center;
+}
+
+.news-item:hover .news-item-time {
+  opacity: 1;
+  background-color: var(--accent-foreground);
+  color: var(--accent);
+}
+
+/* 使时间文字更紧凑 */
+.time-char {
+  margin-bottom: -2px;
+}

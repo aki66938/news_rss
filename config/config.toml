@@ -1,0 +1,21 @@
+# News RSS 配置文件
+
+# 基础设置
+[settings]
+# RSSHub 基础URL
+RSSHUB_BASE_URL = "http://192.168.8.110:1200/"
+# 刷新间隔（分钟）
+REFRESH_INTERVAL = 30
+# 默认主题 (light, dark, system)
+DEFAULT_THEME = "system"
+
+# 卡片配置
+[[cards]]
+id = "card-1743804549231"
+title = "知乎热榜"
+color = "#3b82f6"
+route = "/zhihu/pin/daily"
+enabled = true
+order = 0
+itemCount = 10
+

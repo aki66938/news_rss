@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FFFFFF;
+    --foreground: 240 10% 3.9%;
+    --card: #FFFFFF;
+    --card-foreground: 240 10% 3.9%;
+    --card-glass-opacity: 0.8;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346 100% 58%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346 100% 58%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #1B1B1F !important;
+    --foreground: 0 0% 98%;
+    --card: #1F1F23;
+    --card-foreground: 0 0% 98%;
+    --card-glass-opacity: 0.7;
+    --popover: #1F1F23;
+    --popover-foreground: 0 0% 98%;
+    --primary: 346 100% 58%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: #26262B;
+    --secondary-foreground: 0 0% 98%;
+    --muted: #26262B;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: #26262B;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: #26262B;
+    --input: #26262B;
+    --ring: 346 100% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  .dark body {
+    background-color: #1B1B1F !important;
+  }
+}
+
+/* 毛玻璃效果基础样式 */
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-opacity-80 dark:bg-opacity-70;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card {
+    @apply glass-effect border border-white/20 dark:border-white/10 shadow-lg;
+    background-color: hsla(var(--card) / var(--card-glass-opacity));
+  }
+
+  .colored-glass-card {
+    @apply glass-effect border border-white/20 dark:border-white/10 shadow-lg;
+    position: relative;
+    overflow: hidden;
+    background-color: hsla(var(--card) / var(--card-glass-opacity));
+  }
+
+  /* 移除了卡片顶部的装饰条 */
+
+  /* 卡片颜色叠加层样式已移至 news-card.css */
+
+  /* 动画效果 */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 主题切换动画 */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+

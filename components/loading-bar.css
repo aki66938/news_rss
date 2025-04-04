@@ -1,0 +1,33 @@
+.loading-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 使用JavaScript设置高度，而不是CSS attr() */
+.loading-bar-container {
+  height: 3px;
+}
+
+.loading-bar {
+  transition: width 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+  height: 100%;
+  background-color: var(--loading-bar-color, #0066FF);
+  width: 0%;
+}
+
+/* 这些属性将由JavaScript直接设置，而不是使用CSS attr() */
+
+/* 加载完成动画 */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.loading-bar-complete {
+  animation: fadeOut 0.5s ease-out forwards;
+}
