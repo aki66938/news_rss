@@ -3,7 +3,8 @@
 # 基础设置
 [settings]
 # RSSHub 基础URL
-RSSHUB_BASE_URL = "http://192.168.8.110:1200/"
+# 请替换为您的RSSHub实例URL
+RSSHUB_BASE_URL = "https://rsshub.app/"
 # 刷新间隔（分钟）
 REFRESH_INTERVAL = 30
 # 默认主题 (light, dark, system)

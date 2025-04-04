@@ -43,11 +43,11 @@ export function AddCardDialog({ isOpen, onClose, onAdd }: AddCardDialogProps) {
           setBaseUrl(config.settings.baseUrl);
         } else {
           // 如果无法获取配置，使用默认值
-          setBaseUrl("http://192.168.8.110:1200/");
+          setBaseUrl("https://rsshub.app/");
         }
       } catch (error) {
         console.error("获取配置失败:", error);
-        setBaseUrl("http://192.168.8.110:1200/");
+        setBaseUrl("https://rsshub.app/");
       }
     }
     

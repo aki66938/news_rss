@@ -59,7 +59,7 @@ async function updateTomlConfig(config: CardConfig[]): Promise<void> {
   try {
     // 构建TOML格式的配置示例（仅用于控制台显示）
     let tomlContent =
-      '# News RSS 配置文件\n\n# 基础设置\n[settings]\n# RSSHub 基础URL\nRSSHUB_BASE_URL = "http://192.168.8.110:1200/"\n# 刷新间隔（分钟）\nREFRESH_INTERVAL = 30\n# 默认主题 (light, dark, system)\nDEFAULT_THEME = "system"\n\n# 卡片配置\n'
+      '# News RSS 配置文件\n\n# 基础设置\n[settings]\n# RSSHub 基础URL\n# 请替换为您的RSSHub实例URL\nRSSHUB_BASE_URL = "https://rsshub.app/"\n# 刷新间隔（分钟）\nREFRESH_INTERVAL = 30\n# 默认主题 (light, dark, system)\nDEFAULT_THEME = "system"\n\n# 卡片配置\n'
 
     config.forEach((card) => {
       tomlContent += `[[cards]]\nid = "${card.id}"\ntitle = "${card.title}"\ncolor = "${card.color}"\nroute = "${card.route}"\nenabled = ${card.enabled}\norder = ${card.order}\n\n`

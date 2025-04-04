@@ -37,7 +37,7 @@ export async function loadTomlConfig() {
     
     return {
       settings: {
-        baseUrl: config.settings.RSSHUB_BASE_URL || "http://192.168.8.110:1200/",
+        baseUrl: config.settings.RSSHUB_BASE_URL || "https://rsshub.app/",
         refreshInterval: config.settings.REFRESH_INTERVAL || 30,
         defaultTheme: config.settings.DEFAULT_THEME || "system",
         defaultItemCount: 10 // 默认值为10
@@ -49,7 +49,7 @@ export async function loadTomlConfig() {
         route: card.route,
         enabled: card.enabled,
         order: card.order,
-        baseUrl: config.settings.RSSHUB_BASE_URL || "http://192.168.8.110:1200/",
+        baseUrl: config.settings.RSSHUB_BASE_URL || "https://rsshub.app/",
         itemCount: card.itemCount || 10 // 使用默认值10
       }))
     };
@@ -63,7 +63,7 @@ export async function loadTomlConfig() {
 function getDefaultConfig() {
   return {
     settings: {
-      baseUrl: "http://192.168.8.110:1200/",
+      baseUrl: "https://rsshub.app/",
       refreshInterval: 30,
       defaultTheme: "system",
       defaultItemCount: 10

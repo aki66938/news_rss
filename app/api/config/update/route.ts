@@ -20,7 +20,8 @@ export async function POST(request: Request) {
     // 基础设置部分
     tomlContent += '# 基础设置\n[settings]\n';
     tomlContent += '# RSSHub 基础URL\n';
-    tomlContent += 'RSSHUB_BASE_URL = "http://192.168.8.110:1200/"\n';
+    tomlContent += '# 请替换为您的RSSHub实例URL\n';
+    tomlContent += 'RSSHUB_BASE_URL = "https://rsshub.app/"\n';
     tomlContent += '# 刷新间隔（分钟）\n';
     tomlContent += 'REFRESH_INTERVAL = 30\n';
     tomlContent += '# 默认主题 (light, dark, system)\n';
