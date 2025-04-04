@@ -7,7 +7,7 @@
  * @license MIT
  */
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, Suspense } from 'react';
 import { LoadingBar } from './loading-bar';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -27,7 +27,8 @@ const LoadingContext = createContext<LoadingContextType>({
 
 export const useLoading = () => useContext(LoadingContext);
 
-export function LoadingProvider({ children }: { children: React.ReactNode }) {
+// 创建一个内部组件来使用useSearchParams
+function LoadingProviderInner({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const pathname = usePathname();
@@ -77,5 +78,14 @@ export function LoadingProvider({ children }: { children: React.ReactNode }) {
       />
       {children}
     </LoadingContext.Provider>
+  );
+}
+
+// 导出的主组件，使用Suspense包裹内部组件
+export function LoadingProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoadingProviderInner>{children}</LoadingProviderInner>
+    </Suspense>
   );
 }
