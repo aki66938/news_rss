@@ -2,7 +2,10 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/) [![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://reactjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/) [![Framer Motion](https://img.shields.io/badge/Framer-Motion-0055FF?logo=framer)](https://www.framer.com/motion/) [![Anime.js](https://img.shields.io/badge/Anime.js-4-red?logo=anime.js)](https://animejs.com/) [![TOML](https://img.shields.io/badge/TOML-3-yellow)](https://toml.io/)
 
-A customizable news aggregation frontend application based on RSSHub API. Browse RSS information from different sources through a clean and beautiful interface.
+A customizable news aggregation frontend application based on RSSHub API. Build your own RSS aggregator.
+
+Demo: [demo](https://news-rss.vercel.app/)
+
 
 ## Features
 
